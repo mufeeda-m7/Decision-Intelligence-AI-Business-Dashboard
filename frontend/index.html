@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview | AI Decision Intelligence</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body data-page="overview">
+  <div id="shell"></div>
+
+  <main class="container">
+    <h2 class="page-title">Sales Analysis Dashboard</h2>
+    <p class="page-sub">All numbers update when you change the Category or Region filter.</p>
+
+    <section class="grid">
+      <div class="card kpi span-2"><div class="value" id="kSales">-</div><div class="label">Total Sales</div></div>
+      <div class="card kpi span-2"><div class="value" id="kProfit">-</div><div class="label">Total Profit</div></div>
+      <div class="card kpi span-2"><div class="value" id="kMargin">-</div><div class="label">Profit Margin</div></div>
+      <div class="card kpi span-2"><div class="value" id="kOrders">-</div><div class="label">Orders</div></div>
+      <div class="card kpi span-2"><div class="value" id="kDiscount">-</div><div class="label">Avg Discount</div></div>
+      <div class="card kpi span-2">
+        <div class="value" id="kHealth">-</div>
+        <div class="label">Business Health</div>
+        <div class="bar"><div id="healthFill"></div></div>
+      </div>
+
+      <div class="card span-4"><h2>Sales by Region</h2><div class="chart-box"><canvas id="regionChart"></canvas></div></div>
+      <div class="card span-4"><h2>Sales by Category</h2><div class="chart-box"><canvas id="categoryChart"></canvas></div></div>
+      <div class="card span-4"><h2>Sales by Segment</h2><div class="chart-box"><canvas id="segmentChart"></canvas></div></div>
+
+      <div class="card span-5"><h2>Top 10 Sub-Categories by Sales</h2><div class="chart-box tall"><canvas id="subChart"></canvas></div></div>
+      <div class="card span-7">
+        <h2>Sales by State</h2>
+        <div class="tilemap" id="tileMap"></div>
+        <div class="legend"><span>Low</span><div class="ramp"></div><span>High</span></div>
+      </div>
+
+      <div class="card span-12"><h2>Sales by Quarter and Region</h2><div class="chart-box tall"><canvas id="trendChart"></canvas></div></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
